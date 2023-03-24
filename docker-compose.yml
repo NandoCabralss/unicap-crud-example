@@ -1,0 +1,16 @@
+version: '3.5'
+
+services:
+  unicap-crud:
+    build: .
+    container_name: unicap-crud
+    ports:
+      - '8000:3000'
+    volumes:
+      - .:/code
+    environment:
+      NODE_ENV: development
+      HOST: '0.0.0.0'
+      PORT: '8080'
+    working_dir: '/app'
+    command: ['yarn', 'start:dev']
