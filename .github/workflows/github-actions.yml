@@ -1,0 +1,34 @@
+name: Crud App CI
+
+on: pull_request
+
+jobs:
+  scripts:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [14, 16, 18]
+    name: Run action with nodejs ${{ matrix.node }} version
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v2
+
+      - name: Setting up node
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node }}
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Run lint
+        run: yarn run lint
+
+      - name: Run test
+        run: yarn test
+
+      - name: Run e2e test
+        run: yarn test:e2e
+
+      - name: Run build
+        run: yarn build
