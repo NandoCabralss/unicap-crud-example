@@ -1,0 +1,32 @@
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.rulers": [120],
+  "editor.tabCompletion": "on",
+  "editor.tabSize": 2,
+  "editor.trimAutoWhitespace": true,
+  "editor.formatOnSave": true,
+  "files.exclude": {
+    "**/.DS_Store": true,
+    "**/.git": true,
+    "**/.hg": true,
+    "**/.svn": true,
+    "**/CVS": true,
+    "dist": false
+  },
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+  "typescript.tsdk": "./node_modules/typescript/lib",
+  "typescript.preferences.importModuleSpecifier": "relative",
+  "eslint.run": "onSave",
+  "eslint.nodePath": "./node_modules",
+  "eslint.options": {
+    "configFile": "./.eslintrc.js"
+  },
+  "eslint.trace.server": "messages",
+  "eslint.validate": ["javascript", "typescript"],
+  "docthis.includeDescriptionTag": true,
+  "docthis.includeMemberOfOnClassMembers": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
+}
